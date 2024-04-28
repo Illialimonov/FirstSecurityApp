@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>  //TODO
+</head>
+<body>
+<form th:method="post" th:action="@{/auth/registration}" th:object="${person}">
+    <label for="username">Enter your name: </label>
+    <input type="text" th:field="*{username}" id="username">
+    <br>
+    <label for="yearOfBirth">Enter your date of birth: </label>
+    <input type="text" th:field="*{yearOfBirth}" id="yearOfBirth">
+    <br>
+    <label for="password">Enter your password: </label>
+    <input type="password" th:field="*{password}" id="password">
+    <br>
+    <input type="submit" value="Create"/>
+
+    <div th:if="${param.error}" style="color: red">Incorrect name or pass</div>
+
+
+
+</form>
+<hr>
+
+
+</body>
+</html>
